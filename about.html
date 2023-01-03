@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anali Hospital</title>
+    <style>
+        *{
+             margin: 0;
+             padding: 0;
+        }
+        .main{
+            width: 100%;
+            background: white;
+            background-position: center;
+            background-size: cover;
+            height: 109vh;
+        }
+        .header{
+            width: 1290px;
+            height: 100px;
+            margin: auto;
+            position: relative;
+            background-color: white;
+            position: fixed;
+            z-index: 1;
+            box-shadow: 2px 7px 9px  rgba(0, 0 ,0, 0.2);
+        }
+            
+        .logo{
+            width: 200px;
+            float: left;
+            height: 70px;
+
+        }
+        .hoslogo{
+            height: 100px;
+            width: 150px;
+            padding-left:  20px;
+            overflow: hidden;
+        }
+        .hed{
+            color: black;
+            font-size: 15px;
+            line-break: none;
+            font-family: Arial, Helvetica;
+            padding-left: 50px;
+            position: relative;        
+            margin-top: -20px;
+        }
+        .navbar{
+            width: 400px;
+            float: left;
+            height: 70px;
+        }
+        ul{  
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            float: left;
+            margin-left: 75px;
+        }
+        ul li{
+            list-style: none;
+            font-size: 15px;
+            margin-top: 27px;
+            margin-left: 30px;
+        }
+        ul li a{
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: black;
+            font-size: 15px;
+            border-bottom: none;
+            transition:all .4s ease;
+        }
+        ul li a:hover{
+            color: blue;
+            border-bottom: 2px solid blue;
+            padding-bottom: 2px;
+            outline: none;
+        }
+        .active{
+           color: rgb(77, 77, 240);
+           border-bottom:2px solid blue;
+        }
+        a.active{
+            background: blue;
+            border-radius: 10px;
+            color: white;
+            padding: 7px;
+        }
+        a.active:hover{
+            color: #fff;
+            background: rgb(77, 77, 240);
+            padding-bottom: 2px;
+            transition: all .5;
+        }
+        .content .home a{
+            border-bottom:3px solid blue;
+        }
+        .navbar button{
+            left: 430px;
+            top: 30px;
+            position: absolute;
+            display: none;
+            width: 30px;
+            height: 30px;
+            color: #fff;
+            z-index: 1;
+        }
+        .search{
+            width: 300px;
+            float: left;
+            margin-left: 955px;
+        }
+        .srch{
+            font-size: 17px;
+            font-family:Arial ;
+            width: 200px;
+            height: 40px;
+            background-color: transparent;
+            border: 2px outset blue;
+            margin-top: -55px;
+            border-right: none;
+            font: 16px;
+            float: left;
+            padding: 10px;
+
+            border-top-left-radius: 5px;
+        }
+        .btn{
+            float: right;
+            font-size: 11.5px;
+            border-bottom-right-radius: 5px;
+            color: white;
+            width: 45px;
+            height: 40px;
+            background: blue;
+            border: 2px solid blue;
+            font-weight: 1000px;
+            margin-top: -55px;
+            font-family: 'Courier New';
+            margin-right: 95px;
+            cursor: pointer;
+        }
+        .btn:focus{
+            outline: none;
+        }
+        .srch:focus{
+            outline: none;
+            opacity: 3;
+        }
+        .btn:hover{
+            background: rgb(77, 77, 240);
+            border-color: 2px inset rgb(77, 77, 240);;
+        }
+        .menubar_1{
+            display: none;
+            position: absolute;
+            left: 430px;
+            top: 30px;
+            align-items: flex-end;
+            background: #4169E1;
+            width: 35px;
+            height: 35px;    
+        }
+        .menubar_1 button{
+            width: 20px;
+            height: 20px;
+            color: white;
+            align-items: center;
+            margin-left: 8px;
+            margin-top: 8px;
+            z-index: -1;
+        }
+        h5{
+            text-align: center;
+            border: 2px solid blue;
+            width: 250px;
+            padding: 2px;
+            margin-left: 190px;
+            margin-top: 50px;
+            font-size: 20px;
+        }
+        .p-doctors span{
+            height: 0px;
+            width: 0px;
+            position: absolute;
+            left: 190px;
+            border-top: 20px solid blue;
+            border-bottom: 20px solid blue;
+            border-left: 20px solid transparent;
+            border-right: 15px solid blue;
+        }
+        .p-align{
+            position: relative;
+            justify-content: space-around;
+        }
+        figure img{
+            width: 450px;
+            height: 550px;
+            float: right;
+            margin-right: 25px;
+            position: relative;
+            border: none;
+            margin-top: 180px;
+            padding-top: 30px;
+        }
+        .rol{
+            padding: 110px;
+            margin-left: -80px;
+            font-size: 17px;
+            font-family: Arial,sans-serif;
+            line-height: 2rem;
+        }
+        .rol h2{
+            padding: 25px;
+            margin-top: 1%;
+            left: 20px;
+            text-align: center;
+        }
+        .rol span{
+            color: blue;
+        }
+        .rol .more{
+            margin-top: 100px;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .rol .img2{
+            width: 450px;
+            height: 300px;
+            position: relative;
+            overflow: none;
+            padding-bottom: 20px;
+            margin-top: 55px;
+        }
+        .rol .vision{
+            max-width: 100%;
+            float: right;
+            width: 300px;
+            height: 20px;
+            text-align: center;
+            margin: 70px 150px;
+            border: 1px solid blue;
+            border-radius: 50px;
+            box-shadow: 1px 4px 10px rgba(69, 12, 228, 0.4);
+        }
+        .rol .s-vision{
+            max-width: 100%;
+            margin-top: -250px;
+            line-height: 2rem;
+            margin-left: 200px;
+            padding-top: 40px;
+            float: right;
+            text-align: center;
+            border-radius: 50px;
+            height: 300px;
+            width: 600px;
+        }
+        .rol .img3{
+            width: 450px;
+            height:300px;
+            margin-top: 50px;
+            border: none;
+            margin-right: -95px;
+            position: relative;
+            overflow: none;
+            float: right;  
+        }
+        .rol .mission{
+            max-width: 100%;
+            float: none;
+            width: 300px;
+            text-align: center;
+            margin-top: 90px;
+            margin-left: 200px;
+            align-items: center;
+            height: 20px;
+            border: 1px solid blue;
+            border-radius: 50px;
+            box-shadow: 1px 4px 10px rgba(69, 12, 228, 0.4);
+        }
+        .rol .s-mission{
+            max-width: 100%;
+            float: none;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .rol details{
+            padding: 20px; 
+        }
+        .rol details:focus{
+            outline: none;
+        }
+        .mypic{
+            padding-left: 115px;
+            position: relative;
+            margin-top: 200px;
+            display: flex;   
+        }
+        .mypic #box img{
+            height: 300px;
+            width: 250px;
+            box-shadow:  1px 2px 5px black;
+            border-radius: 9%;
+            float:none;
+            overflow: none;
+        }
+        .mypic #box{
+            align-items: center; 
+            display: block;
+            border: 1px solid #fff;
+            margin-bottom: 20px;
+        }
+        .mypic #box h3{
+            padding-top: 10px;
+            padding-left: 60px;
+            font-weight: bold;
+            font-family: Arial;
+            width: 230px;
+            text-align: center;   
+        }
+        .mypic #box img{
+            width: 200px;
+            height: 200px;
+            box-shadow:  1px 2px 5px black;
+            border-radius: 9%;
+            margin-left: 100px;
+        }
+        .mypic #box{
+            align-items: center; 
+            border: 1px solid #fff;
+        }
+        .mypic #box h3{
+            padding-top: 10px;
+            padding-left: 90px;
+            font-weight: bold;
+            font-family: Arial;
+            text-align: center;   
+        }
+        .cmt{
+            margin-left: 25px;
+            margin-top: 50px;
+        }
+        .cmt h3{
+            font-size: 17px;
+            cursor: pointer;
+        }
+        .cmt input{
+            padding: 45px;
+        }
+        .cmt input:focus{
+            outline: none;
+        }
+        .send{
+            position: relative;
+            margin: 20px;
+            max-width: 100%;
+        }
+        .send button{
+            margin-top: 0px;
+            padding: 10px;
+            width: 100px;
+            background: blue;
+            border: none;
+            border-radius: 10px;
+            transition: all 0.4s ease;
+        }
+        .send button:hover{
+            background: #4169E1;
+        }
+        .send a{
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer{
+            width: 100%;
+            margin-top: 1%;
+            padding-top: 00px;
+            background-color: #00008b;
+        }
+        .footer h4{
+            color: white;
+            text-align: center;
+            font: 30px;
+            font-size: 17px;
+        }
+        .ftn{
+            float: left;
+            color: white;
+            margin-left: 200px;
+            padding-top: 20px;
+            
+        }
+        .footer h3{
+            font-family: arial;
+        }
+        .ftn a{
+            outline: none;
+            list-style: none;
+            color: white;
+            text-decoration: none;
+            line-height: 2rem;
+            font-size: 17px;
+            letter-spacing: 0.0625rem;
+        }
+        .ftn a:focus{
+            outline: none;
+        }
+        .ftn-data{
+            max-width: 100%;
+            color: white;
+            margin-left: 20px;
+            margin-bottom: 110px;
+            
+        }
+        .ftn-hoslogo{
+            height: 100px;
+            width: 100px;
+            border-radius: 100%;
+            padding: 100px;
+            float: none;
+            position: relative;
+            z-index: 3;
+        }
+      
+        #h-logo{
+            margin-top: -80px;
+            margin-left: 60px;
+            position: relative;
+            font-weight: 100;
+        }
+        #p-logo{
+            margin-left: 58px;
+        }
+        @media screen and (max-width:1000px) {
+            .navbar{
+            display: none;
+            background: #4169E1;
+            height: 600px;
+            transition: 5s all ease-in-out;
+            
+            }
+            ul{  
+            align-items: center;
+            display: block;
+            justify-content: center;
+           }
+            ul li{
+            list-style: none;
+            font-size: 15px;
+            margin-top: 50px;
+            margin-left: -25px;
+            }
+            ul li a:hover{
+            color: white;
+            border-bottom: 2px solid white;
+           }
+            .menubar_1{
+            display: block;
+           
+            }
+            .navbar button{
+                display: block;
+            }
+            h5{
+            width: 250px;
+            margin-left: 50px;
+            margin-top: 45px;
+            }
+            .p-doctors span{
+            position: absolute;
+            left: 45px;
+            }
+           .p-align{
+            text-align: left;
+           }
+            figure img{
+             display: none;
+            }
+           .rol{ 
+            font-size: 15px;
+           }
+           .rol h2{
+            padding: 25px;
+            margin-top: 1%;
+            text-align: center;
+           }
+           .rol .more{
+            margin-top: 50px;
+           }
+           .rol .img2{
+            image-orientation: flip;
+            width: 400px;
+            overflow: hidden;
+           }
+           .rol .vision{
+            max-width: 100%;
+            width: 200px;
+            height: 10px;
+            float: none;
+            margin-top: -10px;
+            margin-left: 39px;
+           }
+           .rol .s-vision{
+            max-width: 100%;
+            margin-top: -35px;
+            line-height: 2rem;
+            margin-left: 200px;
+            padding-top: 0px;
+            float: right;
+           }
+           .rol .img3{
+            width: 400px;
+            height: 300px;
+            margin-top: 50px;
+            border: none;
+            position: relative;
+            overflow: none;
+            float: none;  
+           }
+           .rol .mission{
+            max-width: 100%;
+            width: 200px;
+            margin-top: 20px;
+            margin-left: 25px;
+            height: 10px;
+           }
+           .rol .s-mission{
+            max-width: 100%;
+            margin-top: 40px;
+           }
+           .cmt{
+            margin-left: 25px;
+            margin-top: 5px;
+           }
+           .mypic{
+            margin-left: -67px;
+            margin-top: 90px;
+            display: block;   
+           }
+           
+        }
+    
+    </style> 
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">    -->
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="logo">
+                <img class="hoslogo"src="hoslogo.png">
+                <h1 class="hed"><span>ANALI</span> HOSPITAL</h1>
+            </div>
+            <div class="navbar" id="MenubarShow">
+                <button type="menu" onclick="HideMenubar()"><ion-icon name="chatbubble" ></ion-icon></button>
+               
+                <ul>
+                    <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\ANALITCH.html">HOME</a></li>
+                    <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\department.html" >DEPARTMENTS</a></li>
+                    <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\service.html">SERVICES</a>
+                        <!-- <div class="menubar">
+                            <ul>
+                                <li><a href="#">LINE SERVICE</a></li>
+                                <li><a href="#">ACQUISITION SERVICES</a></li>
+                                <li><a href="#">SUPPORTIVE SERVICES</a></li>
+                                <li><a href="#">LINE SERVICE</a></li>
+                            </ul>
+                        </div> -->
+                    </li>
+                    <li><a id="line" href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\P&D.html">PHYSICIANS/STAFF</a></li>
+                    <li><a class="active" href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\about.html">ABOUT</a></li>
+                </ul>
+            </div>
+             
+            <div class="menubar_1">
+                <button type="menu" onclick="ShowMenubar()"><ion-icon name="chatbubble" ></ion-icon></button>
+            </div> 
+            <div class="search">
+                <input class="srch" type="search" name="search" placeholder="Type">
+            </div>
+            <div>
+                <a href="#search"><button class="btn">SEARCH</button></a>
+            </div>
+        </div> 
+            <figure>
+                <img src="PG1.jpg"  onMouseover="src='ava12.jpg'">
+            </figure>
+        <div class="rol">
+            <div>
+                <h2>ABOUT <span>ANALI HOSPITAL</span></h2>
+                <p>Our Hospital always put our patients first. Our facilities,policies, and pricing structure are developed to provide a hassel-free experience to all patients. In addition, we focus on empowering our patients by giving them access to all the necessary information. We are often led by a visionary senior- level executive who inspires the doctors and staff to deliver their best.  </p>
+                <p>In addition, Anali Hospital is opened to adapting a rapid technology advancement. We integrate modern technology in every Aspect of Healthcare,from patient data management to <b>Surgical procedures.</b>In  fact, state-of-Art equipment, world-class facilities, and experienced Doctors and Staff are the pillars on which our  hospital is Built.</p>
+            </div>
+            
+            <div class="p-doctors">
+                <span></span>
+                <h5 class="text-center">Physicians And Doctors</h5>
+                <p class="p-align">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ea facilis, laboriosam alias, numquam dolor eaque veritatis nulla quas quasi ad delectus suscipit incidunt accusamus corrupti cumque harum cum aut nisi atque corporis! Itaque, quos commodi deserunt velit pariatur, reiciendis minima id sunt ad eius eaque doloribus ex ipsum earum?</p>
+            </div>
+
+            <div>
+                <h2 class="more">OUR ROLES</h2>
+                <p id="rolesparagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.<a href="javascript:void(0);" onClick="expandRoles();"><em>Click for more.</em></a></p>
+            </div>
+            
+            <div class="section_1">
+                <img src="PG3.jpg" class="img2" id="SwapImage" onmouseover="ChangeImage();">
+                <span></span><h2 class="vision">VISION</h2>
+                <P class="s-vision">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero quidem dolorem consequatur aut numquam ipsam veniam nihil perspiciatis accusamus nulla aliquid, sint magnam sequi neque ut vel, debitis corporis! Minus excepturi modi, minima magni quasi, officia, a ipsum asperiores repellat numquam suscipit tempora ex eveniet id praesentium esse blanditiis sequi.</P>
+            </div>
+            <div class="section_2">
+                <img class="img3" src="CARE.jpg" > 
+                <span></span><h2 class="mission">MISSION</h2>
+                <P class="s-mission">Lorem ipsum Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque quibusdam ex commodi voluptatum iure eum facere debitis, at eos quam quia sit fugit eius odio nam. Eius non eveniet nesciunt. dolor sit amet, consectetur adipisicing elit. Libero quidem dolorem consequatur aut numquam ipsam veniam nihil perspiciatis accusamus nulla aliquid, sint magnam sequi neque ut vel, debitis corporis! Minus excepturi modi, minima magni quasi, officia, a ipsum asperiores repellat numquam suscipit tempora ex eveniet id praesentium esse blanditiis sequi.</P>
+            </div>
+        </div>
+        
+        <div class="cmt">
+            <h3 id="text" onclick="MakeBig();">FEEDBACK</h3>
+               <input type="textarea" placeholder="Type" for="text">
+            </div>
+            <div class="send">
+                <button id="#send" onclick="popup('Thanks! We will contact you soon!')"> 
+                    <a href="JavaScript:void(0)">SEND</a>
+                </button>
+            </div>
+         
+        <div class="mypic">
+            <div id="box"><a href="javascript:void(0);" onclick="listType();"><img src="MD.jpg"></a>
+            </div>
+            <div id="box"><img src="abba.jpg"><h3>M.DIRECTOR</h3></div>
+            <div id="box"><img src="abba.jpg"><h3>H.STAFF</h3></div>
+        </div>
+        <div class="footer">
+            <div class="ftn">
+                <dl>
+                    <h3>ANALI HOSPITAL</h3>
+                    <li><a href="#about">About us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">News And Event</a></li>
+                </dl>
+            </div >
+            <div class="ftn">
+                <h3> SEARCH FOR</h3>
+                <li><a href="fro" id="fro">Doctor?</a></li>
+                <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\P&D.html">Nurse?</a></li>
+                <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\P&D.html">pharmcist?</a></li>
+                <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\P&D.html">Worker?</a></li>
+            </div>
+            <div class="ftn">
+                <h3>PATIENT</h3>
+                <li><a  href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\department.html">Patient & Visitors</li>
+                <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\department.html">patient Resources</a></li>
+                <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\ANALITCH.html">Call-to-Action</a></li>
+                <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\department.html">Out-of-town patience</a></li>
+            </div>
+            <div class="ftn-data">
+            <img class="ftn-hoslogo" src="hoslogo.png">
+            <h3 id="h-logo">Anali hospital</h3>
+            <p id="p-logo"> 2111 P.O Box 687 Kano Nigiria</p>
+            </div>
+            <div><i class="fa-brands fa-facebook"></i></div>
+            <h4><p>&copy;</p>. All rights Reserved 2022 ANA604 by Analitech</p></h4>
+        </div>
+    </div>
+    <script src="hospital.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    </div>
+</body>
+</html>

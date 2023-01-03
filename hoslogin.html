@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            width: 100%;
+            background-image: linear-gradient(to bottom left,rgb(115, 115, 190) ,white  );
+            background-position: center;
+            background-size: cover;
+            height: 109vh;
+        }
+        .header{
+            width: 1290px;
+            height: 100px;
+            margin: auto;
+            position: relative;
+            background-color: white;
+            position: fixed;
+            z-index: 1;
+            box-shadow: 2px 7px 9px rgba(0, 0 ,0, 0.2);   
+        }
+        .header .hoslogo{
+            height: 100px;
+            width: 150px;
+            margin-left:  0px;
+            overflow: hidden;
+            top: 0;
+        }
+        .header h1{
+            font: 30px;
+            font-size: 30px;
+            text-align: center;
+            margin-top: -70px;
+            color: black;
+            font-family: 'Courier New';
+        }
+    
+        span{
+            color: rgb(11, 11, 253)
+        }
+        form{
+            max-width: 100%;
+            align-items: center;
+            border: 2px solid blue;
+            width: 260px;
+            height: 350px;
+            margin: 100px 500px;
+            border-radius: 6%;
+            box-shadow: 1px 2px 8px rgb(100, 84, 84);
+            background: #fff;
+        }
+        .sub-box{
+            position: relative;
+            display: flex;
+            padding: 20px;
+            position: relative;
+
+        }
+        .sub-box a{
+            margin-left: 10px;
+            color: black;
+            text-decoration: none;
+            align-items: center;
+            font-family: Arial;
+        }
+        .sub-box .signup:hover{
+            color: blue;
+        }
+        .sub-box .login{
+            margin-left: 50px;
+            border-bottom: 4px solid blue;
+            padding: 12px 29px; 
+            border-radius: 15px;
+            width: 200px;   
+        }
+        .input{
+            padding: 20px;
+            margin-left: 20px;
+            margin-top: -15px;
+             
+        }
+        .input input{
+            background: transparent;
+            padding: 3px;
+            font-size: 17px;
+            margin-left: -20px;
+            margin-top: 20px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom-style: solid;
+        }
+        .input input:focus{
+            outline: none;
+        }
+        .sig button{
+            margin-top: 20px;
+           padding-left: 80px;
+           padding-right: 80px;
+            border-radius: 5px;
+            border-color: blue;
+            margin-left: 22px;
+            color: #fff;
+            font-size: 15px;
+            height: 30px;
+            color: #fff;
+            font-weight:    bold;
+            font-family: arial;
+            background-color: blue;
+            transition: all .4s;
+        
+        }
+        .sig p{
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 13px;
+            font-family: arial;
+            font-weight: bold;
+        }
+        .sig button:hover{
+            color: black;
+            background-color: rgb(77, 77, 240);
+            cursor: pointer;
+        }
+        .sig button :focus{
+            outline: none;
+            overflow: hidden;
+        }
+        .sig #log{
+            text-decoration: none;
+            color: blue;
+            font-size: 12px;
+            border-bottom: 2px solid blue;
+            margin-left: 5px;
+            transition: all 0.3s;
+
+        }
+        .sig #log:hover{
+            color: rgb(77, 77, 240);
+            border-bottom: 2px solid rgb(77, 77, 240);
+        }
+        a{
+            text-decoration: none;
+            color: #fff
+        }       
+   </style>
+   <script src="https://kit.fontawesome.com/cb3e5f002c.js" crossorigin="anonymous"></script>
+</head>
+    <body>
+        <div class="main">
+            <div class="header">
+                <div class="logo">
+                    <img class="hoslogo"src="hoslogo.png">
+                    <h1 class="hed"><span>ANALI</span> HOSPITAL</h1>
+                </div>
+            <form>
+                <div class="box">
+                    <div class="sub-box">
+                        <h4><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\hospitalform.html" class="signup">SIGNUP</a></h4>
+                        <h4><a href="#" class="login">LOGIN</a></h4>
+                    </div>
+                     <div class="input">
+                        <input type="email" placeholder="Email" required>
+                        <input type="password" placeholder="********" required>
+                        <label><input type="checkbox" required>Remember Me</label>
+                    </div>
+                    <div class="sig">
+                        <button id="btn"><a class="wev" href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\ANALITCH.html">LOGIN</a></button>
+                    <P>Don't you have an Account?:<a id="log" href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\hospitalform.html">SIGNUP</a></P>
+                   </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

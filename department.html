@@ -1,0 +1,1097 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments</title>
+<html>
+    <style>
+       *{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            width: 100%;
+            background: white;
+            background-position: center;
+            background-size: cover;
+            height: 109vh;
+        }
+        .header{
+            width: 1290px;
+            height: 100px;
+            padding-top: 10px;
+            margin-bottom: 100px;
+            margin: auto;
+            background-color: white;
+            position: fixed;
+            z-index: 1;
+            box-shadow: 2px 7px 9px rgba(0, 0 ,0, 0.2);   
+        }   
+        .logo{
+            width: 200px;
+            float: left;
+            height: 70px;
+
+        }
+        .hoslogo{
+            height: 90px;
+            width: 150px;
+            padding-left:  20px;
+            overflow: hidden;
+        }
+        .hed{
+            color: black;
+            font-size: 14px;
+            line-break: none;
+            font-family: Arial, Helvetica;
+            padding-left: 50px;
+            position: relative;        
+            margin-top: -15px;
+        }
+        .navbar{
+            width: 400px;
+            float: left;
+            height: 70px;
+        }
+        ul{  
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            float: left;
+            margin-left: 75px;
+        }
+        ul li{
+            list-style: none;
+            font-size: 15px;
+            margin-top: 27px;
+            margin-left: 30px;
+        }
+        ul li a{
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: black;
+            font-size: 15px;
+            border-bottom: none;
+            transition:all .4s ease-in;
+        }
+        ul li a:hover{
+            color: blue;
+            border-bottom: 2px solid blue;
+            padding-bottom: 2px;
+            outline: none;
+        }
+        .active{
+           color: rgb(77, 77, 240);
+           border-bottom:2px solid blue;
+
+        }
+        a.active{
+            background: blue;
+            border-radius: 10px;
+            color: white;
+            padding: 7px;
+        }
+        a.active:hover{
+            color: #fff;
+            background: rgb(77, 77, 240);
+            padding-bottom: 2px;
+            transition: all .5;
+        }
+        .content .home a{
+            border-bottom:3px solid blue;
+        }
+        .navbar button{
+            left: 430px;
+            top: 30px;
+            position: absolute;
+            display: none;
+            width: 30px;
+            height: 30px;
+            color: #fff;
+            z-index: 1;
+        }
+        .search{
+            width: 300px;
+            float: left;
+            margin-left: 955px;
+        }
+        .srch{
+            box-shadow: 1px 3px 7px rgba(90, 90, 105, 0.5); 
+            font-size: 17px;
+            font-family:Arial ;
+            width: 200px;
+            height: 40px;
+            background-color: transparent;
+            border: 2px solid blue;
+            margin-top: -55px;
+            border-right: none;
+            font: 16px;
+            float: left;
+            padding: 10px;
+            border-top-left-radius: 5px;
+        }
+        .btn{
+            box-shadow: 1px 3px 7px rgba(47, 47, 51, 0.5); 
+            float: right;
+            font-size: 11.5px;
+            border-bottom-right-radius: 5px;
+            color: white;
+            width: 45px;
+            height: 40px;
+            background: blue;
+            border: 2px solid blue;
+            font-weight: 1000px;
+            margin-top: -55px;
+            font-family: 'Courier New';
+            margin-right: 95px;
+            cursor: pointer;
+        }
+        .btn:focus{
+            outline: none;
+        }
+        .srch:focus{
+            outline: none;
+            opacity: 3;
+        }
+        .btn:hover{
+            background: rgb(77, 77, 240);
+            border-color: 2px inset rgb(77, 77, 240);;
+        }
+        .menubar_1{
+            display: none;
+            position: absolute;
+            left: 430px;
+            top: 30px;
+            align-items: flex-end;
+            background: #4169E1;
+            width: 35px;
+            height: 35px;    
+        }
+        .menubar_1 button{
+            width: 20px;
+            height: 20px;
+            color: white;
+            align-items: center;
+            margin-left: 8px;
+            margin-top: 8px;
+            z-index: -1;
+        }
+        .content_2{
+            max-width: 100%;
+            padding-top: 60px;
+        }
+        .content_2 h3{
+            font-family: 'Times New Roman', Times, serif;
+            outline:none;
+            font-weight: bold;
+            font-size: 30px;
+            padding-top: 30px;
+            color: #000;
+            margin-top: 50px;
+            padding: 30px;
+            text-align: center;
+        }
+        .content_2 p{
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 549;
+            text-justify: auto;
+            font-size: 19px;
+            margin-left: 30px;
+        } 
+        .content_2 span{
+            color: blue;
+        }
+        .dept{
+            padding-bottom: 100px;
+            max-width: cal (100%-300px);
+            display: inline-table;
+            margin-left: 20px;
+            margin-top: 90px;
+        }
+        .dept .div{
+            height: 100px;
+            width: 300px;
+            padding: 20px;
+            padding-bottom: 200px;
+            border: 2px solid #fff;
+            display: inline-grid;
+            justify-content: space-around; 
+            margin-left: 50px;
+            box-shadow:   0 5px 9px rgba(0, 0 ,0, 0.2);
+            margin-bottom: 45px;
+        }
+        .dept .div_1{
+            height: 100px;
+            width: 300px;
+            padding: 20px;
+            padding-bottom: 200px;
+            border: 2px solid #fff;
+            justify-content: space-around; 
+            display: inline-grid;
+            margin-left: 50px;
+            box-shadow:   0 5px 9px rgba(0, 0 ,0, 0.2);
+            margin-bottom: 45px;
+        
+        }
+        .dept .div_2{
+            height: 100px;
+            width: 300px;
+            padding: 20px;
+            padding-bottom: 200px;
+            border: 2px solid #fff;
+            display: inline-grid;
+            justify-content: space-around; 
+            margin-left: 50px;
+            box-shadow:   0 5px 9px rgba(0, 0 ,0, 0.2);
+            margin-bottom: 45px;
+        
+        }
+        img{
+            height: 200px;
+            width: 530px;
+            mask-position: 23px;
+            overflow: hidden;
+            max-width: 100%;
+            border-bottom: 3px solid white;
+        }
+        .dept h3{
+            color: #fff;
+            font-family: arial;
+            padding: 13px;
+            border-bottom: 2px solid #00008b;
+            text-align: center;
+            background-color: blue;
+        }
+        .content-3{
+            max-width: 100%;
+            margin-bottom: 90px;
+        }
+        .content-3 .input-1{
+            display: inline-table;
+            margin-left: 25px;
+            float: none;
+        }
+        .content-3 .input-2{
+            display: inline-table;
+            float: right;
+            margin-right: 90px;
+        }
+        .content-3 .input-3{
+            display: inline-table;
+            float: right;
+            margin-right: 150px;
+        }
+        .content-3 label{
+            display: block;
+            padding-bottom: 34px;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: 544;
+        }
+        .content-3 h2{
+            padding: 17px;
+            font-family: sans-serif;
+        }
+        .content-3 p{
+            font-style: italic;
+            font-size: 18px;
+            padding: 10px;
+        }
+        .content-3 input:focus{
+            outline: none;
+        }    
+        .cmt{
+            margin-left: 15px;
+            margin-top: -40px;
+        }
+        .cmt input{
+            padding: 35px;
+        }
+        .cmt input:focus{
+            outline: none;
+        }
+        .send{
+            position: relative;
+            margin: 20px;
+            max-width: 100%;
+        }
+        .send button{
+            margin-top: 0px;
+            padding: 10px;
+            width: 100px;
+            background: blue;
+            border: none;
+            border-radius: 10px;
+            transition: all 0.4s ease;
+        }
+        .send button:hover{
+            background: #4169E1;
+        }
+        .send a{
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer{
+            width: 100%;
+            margin-top: 1%;
+            padding-top: 00px;
+            background-color: #00008b;
+        }
+        .footer h4{
+            color: white;
+            text-align: center;
+            font: 30px;
+            font-size: 17px;
+        }
+        .ftn{
+            float: left;
+            color: white;
+            margin-left: 200px;
+            padding-top: 20px;
+            
+        }
+        .footer h3{
+            font-family: arial;
+        }
+        .ftn a{
+            outline: none;
+            list-style: none;
+            color: white;
+            text-decoration: none;
+            line-height: 2rem;
+            font-size: 17px;
+            letter-spacing: 0.0625rem;
+        }
+        .ftn a:focus{
+            outline: none;
+        }
+        .ftn-data{
+            max-width: 100%;
+            color: white;
+            margin-left: 20px;
+            margin-bottom: 110px;
+            
+        }
+        .ftn-hoslogo{
+            height: 100px;
+            width: 100px;
+            border-radius: 100%;
+            padding: 100px;
+            float: none;
+            position: relative;
+            z-index: 3;
+        }
+      
+        #h-logo{
+            margin-top: -80px;
+            margin-left: 60px;
+            position: relative;
+            font-weight: 100;
+        }
+        #p-logo{
+            margin-left: 58px;
+        }
+        .bott{
+            background-color:#4169E1;
+            border: 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            color: #fff;
+            padding: 10px 20px;
+            /* margin-top: 200px;
+            margin-right: 256px; */
+            font-size: 14px;
+            pointer-events: all;
+
+        }
+        .bott:hover{
+            background-color: #00008b;
+            cursor: pointer;
+        }
+        .bott:focus{
+            outline: none;
+        }
+        #close-bott{
+            margin-top: 125px;
+        }
+        .popup .model-container{
+            background-color:transparent;
+            outline: none;
+            align-items: center;
+            display: none;
+            pointer-events: none;
+            position: relative;
+            top: 0;
+            left: 0;
+            height: vh;
+            width: 70vh;
+            border-style: none;
+        }
+        .model{
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 5px 9px rgba(0, 0 ,0, 0.2);
+            padding: 30px 50px;
+            width: 450px;
+            height: 250px;
+            max-width: 100%;
+            text-align: center;
+            color: black;
+            margin: -100px 540px;
+            padding-bottom: 80px;
+
+        }
+        .popup.active .model-container{
+            display: block;
+
+        }
+        .popup.active .model{
+            transition: all 300ms ease-in-out;
+        }
+        .model2{
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 5px 9px rgba(0, 0 ,0, 0.2);
+            padding: 30px 50px;
+            width: 450px;
+            height: 250px;
+            max-width: 100%;
+            text-align: center;
+            color: black;
+            margin: -300px 540px;
+            padding-bottom: 80px;
+        }
+        .popup2 .MERTERNITY-container{
+            background-color:transparent;
+            outline: none;
+            align-items: center;
+            display: none;
+            pointer-events: none;
+            position: relative;
+            top: 0;
+            left: 0;
+            height: vh;
+            width: 70vh;
+            border-style: none;
+        }
+        .popup2.active .MERTERNITY-container{
+            display: block;
+
+        }
+        .popup2.active .MERTERNITY-container{
+            transition: all 300ms ease-in-out;
+        }
+        .model3{
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 5px 9px rgba(0, 0 ,0, 0.2);
+            padding: 30px 50px;
+            width: 450px;
+            height: 250px;
+            max-width: 100%;
+            text-align: center;
+            color: black;
+            margin: -300px 540px;
+            padding-bottom: 80px;
+        }
+        .popup3 .RADIOLOGY-container{
+            background-color:transparent;
+            outline: none;
+            align-items: center;
+            display: none;
+            pointer-events: none;
+            position: relative;
+            top: 0;
+            left: 0;
+            height: vh;
+            width: 70vh;
+            border-style: none;
+        }
+        .popup3.active .RADIOLOGY-container{
+            display: block;
+        }
+        .popup3.active .RADIOLOGY-container{
+            transition: all 300ms ease-in-out;
+        }
+     @media screen and (max-width: 1279px) {
+           #MenubarShow button{
+            display: block;
+            }
+            ul{  
+            align-items: center;
+            display: block;
+            justify-content: center;
+           }
+            ul li{
+            list-style: none;
+            font-size: 15px;
+            margin-top: 50px;
+            margin-left: -25px;
+            }
+            ul li a:hover{
+            color: white;
+            border-bottom: 2px solid white;
+           }
+            .menubar_1{
+            display: block;
+            }
+            .navbar{
+            display: none;
+            background: #4169E1;
+            height: 600px;
+            transition: 5s all ease-in-out;
+            }
+        .content-3 .input-2{
+            display: block;
+            float: none;
+           margin-left: 28px;
+        }
+        .content-3 .input-3{
+            display: block;
+            float: none;
+           margin-left: 28px;
+        }
+       
+     }
+     /* @media screen and (max-width: 600px) {
+     .navbar{
+            display: none;
+        }
+    } */
+    </style>
+       <script lang="text/javascript">
+        function togglepopup() {
+            document.getElementById('model_container').style.display("block")
+        }
+
+        function togglepopup2() {
+            document.getElementById('MERTERNITY_container').classList.toggle("active")
+        }
+        function togglepopup3() {
+            document.getElementById('RADIOLOGY_container').classList.toggle("active")
+        }
+    </script>
+    </head>
+    <body>
+        <div class="main">
+                <div class="header">
+                    <div class="logo">
+                    <img class="hoslogo" src="hoslogo.png">
+                        <h1 class="hed"><span>ANALI</span> HOSPITAL</h1>
+                    </div>
+                    <div class="navbar" id="MenubarShow">
+                        <button type="menu" onclick="HideMenubar()"><ion-icon name="chatbubble" ></ion-icon></button>
+                        <ul>
+                            <li><a  href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\ANALITCH.html">HOME</a></li>
+                            <li><a class="active" href="#department">DEPARTMENTS</a></li>
+                            <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\service.html">SERVICES</a>
+                            </li>
+                            <li><a id="line" href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\P&D.html">PHYSICIANS/STAFFS</a></li>
+                            <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\about.html">ABOUT</a></li>
+                        </ul>
+                    </div>
+                    <div class="menubar_1">
+                        <button type="menu" onclick="ShowMenubar()"><ion-icon name="chatbubble" ></ion-icon></button>
+                    </div> 
+
+                    <div class="search">
+                        <input class="srch" type="search" name="search" placeholder="Type">
+                    </div>
+                    <div>
+                        <a href="#search"><button class="btn">SEARCH</button></a>
+                    </div>
+                </div>
+                <div class="content_2">
+                    <h3>Anali<span> Hospital</span> Departments</h3>
+                    <p><b> ANALI UNICARE HOSPITAL</b> has outpatient departments and chronic treatment units such as behavioral health services, dentistrydermatology, psychiatric  ward, rehabilitation services (Rehab), and physical therapy.Common hospital support units include a dispensary or pharmacy, pathology, and radiology, and on the non-medical side, there often are medical records departments and/or a  release of information department. Nursing services areconsidered one of the most important aspects in the process      of distinguished medical care.
+                    </p>
+                    <p>
+                    At the Admitting Department, the patient will be required to provide personal information and sign consent forms before being taken to the hospital unit or ward. If the individual iscritically ill, then, this information is usually obtained from a family member.
+                    </p>
+                    <p>Our hospital have many Departments,Below are the list of our Departments</p>
+                    
+                </div>
+            
+            <div class="dept">
+                <div class="div">
+                    <h3  id="low_font">(A/E) DEPARTMENTS</h3>
+                    <img src="emergencypic.jpg">
+                    <button class="bott" type="button" onclick="togglepopup()">MORE DETAILS</button> 
+                    <div class="popup" id="model_container">
+                        <div class="model-container">
+                            <div class="model">
+                                <h6>A and E DEPARMENT</h6>
+                                <P> eftugefgkuiwfglbevjgy7vgeulwhve  uigefl7ge uigloiwgf ugioftg3
+                                    go7eq8f uiygwo7iy
+                                    bhlshfctev chgoytg bigwle
+                                    bgvlwuighcv hgl7wg hcluhwr hbc hbcyiwge bcilu </P>
+                                <input type="checkbox" name="wards">Male ward<br>
+                                <input type="checkbox" name="wards">Female ward<br>
+                                <input type="checkbox" name="wards">Childeren ward<br>
+                                <input type="checkbox" name="wards">Accident & FirstAid ward<br>
+                                <button  class="bott" id="close-bott" type="button" onclick="togglepopup()">close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div">
+                <h3>MERTERNITY DEPARTMENTS</h3>
+                <img src="maternitypic.png">
+
+                <button class="bott" type="button" onclick="togglepopup2()">MORE DETAILS</button>
+                <div class="popup2" id="MERTERNITY_container">
+                    <div class="MERTERNITY-container">
+                        <div class="model2">
+                            <h6>A and E DEPARMENT</h6>
+                            <P>
+                            my name is ahmad nura i attenteded sahawa int't school kano ,
+                            i did attend noble academy i did junior school, after i attended top quality COLLEGE KANO.
+                            </P>
+                            <p>select One</p>
+
+                            <button  class="bott" id="close-bott" type="button" onclick="togglepopup2()">close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="div">
+                <h3>PHARMARCY DEPARMENT</h3>
+                <img src="ICUPIC.png">
+                <button class="bott" type="button" onclick="togglepopup()">MORE DETAILS</button>
+                <div class="popup" id="model_container">
+                    <div class="model-container">
+                        <div class="model">
+                            <h6>A and E DEPARMENT</h6>
+                            <P>
+                                Lorem ipsum dolor sit ameconsectetur t adipisicing elit. Repellat voluptate
+                                consectetur deleniti quisquam  est libero facilis sapiente
+                                rem saepe esse quo ut enim! Eveniet totam eius laborum, in accusamus
+                                non dolorem perspiciatis laboriosam, natus officia
+                                nostrum ex? Dolorem, autem nemo. Quidem fac
+                            </P>
+                            <p>select One</p>
+
+                            <button  class="bott" id="close-bott" type="button" onclick="togglepopup()">close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="div">
+                    <h3>INTENSIVE CARE UNIT (ICU)</h3>
+                    <img src="ICUPIC.png">
+                    <button class="bott" type="button" onclick="togglepopup()">MORE DETAILS</button>
+                    <div class="popup" id="model_container">
+                        <div class="model-container">
+                            <div class="model">
+                                <h6>A and E DEPARMENT</h6>
+                                <P>
+                                    Lorem ipsum dolor sit ameconsectetur t adipisicing elit. Repellat voluptate
+                                    consectetur deleniti quisquam  est libero facilis sapiente
+                                    rem saepe esse quo ut enim! Eveniet totam eius laborum, in accusamus
+                                    non dolorem perspiciatis laboriosam, natus officia
+                                    nostrum ex? Dolorem, autem nemo. Quidem fac
+                                </P>
+                                <p>select One</p>
+
+                                <button  class="bott" id="close-bott" type="button" onclick="togglepopup()">close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div">
+                    <h3>PAEDIATRIC DEPARTMENT</h3>
+                    <img src="peadiapic.jpg">
+                    <button class="bott" type="button" onclick="togglepopup()">MORE DETAILS</button>
+                    <div class="popup" id="model_container">
+                        <div class="model-container">
+                            <div class="model">
+                                <h6>A and E DEPARMENT</h6>
+                                <P>
+                                    Lorem ipsum dolor sit ameconsectetur t adipisicing elit. Repellat voluptate
+                                    consectetur deleniti quisquam  est libero facilis sapiente
+                                    rem saepe esse quo ut enim! Eveniet totam eius laborum, in accusamus
+                                    non dolorem perspiciatis laboriosam, natus officia
+                                    nostrum ex? Dolorem, autem nemo. Quidem fac
+                                </P>
+                                <p>select One</p>
+
+                                <button  class="bott" id="close-bott" type="button" onclick="togglepopup()">close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div">
+                    <h3>ANESTHETICS DEPARTMENT</h3>
+                    <img src="anespic.png">
+                    <button class="bott" type="button" onclick="togglepopup()">MORE DETAILS</button>
+                    <div class="popup" id="model_container">
+                        <div class="model-container">
+                            <div class="model">
+                                <h6>A and E DEPARMENT</h6>
+                                <P>
+                                    Lorem ipsum dolor sit ameconsectetur t adipisicing elit. Repellat voluptate
+                                    consectetur deleniti quisquam  est libero facilis sapiente
+                                    rem saepe esse quo ut enim! Eveniet totam eius laborum, in accusamus
+                                    non dolorem perspiciatis laboriosam, natus officia
+                                    nostrum ex? Dolorem, autem nemo. Quidem fac
+                                </P>
+                                <p>select One</p>
+
+                                <button  class="bott" id="close-bott" type="button" onclick="togglepopup()">close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div_1">
+                    <h3>SURGICAL DEPARTMENT</h3>
+                    <img src="surgpic.png">
+                    <button class="bott" type="button" onclick="togglepopup()">MORE DETAILS</button>
+                    <div class="popup" id="model_container">
+                        <div class="model-container">
+                            <div class="model">
+                                <h6>A and E DEPARMENT</h6>
+                                <P>
+                                    Lorem ipsum dolor sit ameconsectetur t adipisicing elit. Repellat voluptate
+                                    consectetur deleniti quisquam  est libero facilis sapiente
+                                    rem saepe esse quo ut enim! Eveniet totam eius laborum, in accusamus
+                                    non dolorem perspiciatis laboriosam, natus officia
+                                    nostrum ex? Dolorem, autem nemo. Quidem fac
+                                </P>
+                                <p>select One</p>
+
+                                <button  class="bott" id="close-bott" type="button" onclick="togglepopup()">close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div_1">
+                    <h3 id="low_font">NUTRITION DEPARTMENT</h3>
+                    <img src="h&s.png">
+                    <button class="bott" type="button" onclick="togglepopup()">MORE DETAILS</button>
+                    <div class="popup" id="model_container">
+                        <div class="model-container">
+                            <div class="model">
+                                <h6>A and E DEPARMENT</h6>
+                                <P>
+                                    Lorem ipsum dolor sit ameconsectetur t adipisicing elit. Repellat voluptate
+                                    consectetur deleniti quisquam  est libero facilis sapiente
+                                    rem saepe esse quo ut enim! Eveniet totam eius laborum, in accusamus
+                                    non dolorem perspiciatis laboriosam, natus officia
+                                    nostrum ex? Dolorem, autem nemo. Quidem fac
+                                </P>
+                                <p>select One</p>
+
+                                <button  class="bott" id="close-bott" type="button" onclick="togglepopup()">close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div_1">
+                    <h3>OTOLARYNCOLOGY (ENT)</h3>
+                    <img src="ent.png">
+                    <button class="bott" type="button" onclick="togglepopup()">MORE DETAILS</button>
+                    <div class="popup" id="model_container">
+                        <div class="model-container">
+                            <div class="model">
+                                <h6>A and E DEPARMENT</h6>
+                                <P>
+                                    Lorem ipsum dolor sit ameconsectetur t adipisicing elit. Repellat voluptate
+                                    consectetur deleniti quisquam  est libero facilis sapiente
+                                    rem saepe esse quo ut enim! Eveniet totam eius laborum, in accusamus
+                                    non dolorem perspiciatis laboriosam, natus officia
+                                    nostrum ex? Dolorem, autem nemo. Quidem fac
+                                </P>
+                                <p>select One</p>
+
+                                <button  class="bott" id="close-bott" type="button" onclick="togglepopup()">close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div_1">
+                    <h3>NEUROLOGY DEPARMENT</h3>
+                    <img src="neuropic.png">
+                    <button class="bott" type="button" onclick="togglepopup()">MORE DETAILS</button>
+                    <div class="popup" id="model_container">
+                        <div class="model-container">
+                            <div class="model">
+                                <h6>A and E DEPARMENT</h6>
+                                <P>
+                                    Lorem ipsum dolor sit ameconsectetur t adipisicing elit. Repellat voluptate
+                                    consectetur deleniti quisquam  est libero facilis sapiente
+                                    rem saepe esse quo ut enim! Eveniet totam eius laborum, in accusamus
+                                    non dolorem perspiciatis laboriosam, natus officia
+                                    nostrum ex? Dolorem, autem nemo. Quidem fac
+                                </P>
+                                <p>select One</p>
+
+                                <button  class="bott" id="close-bott" type="button" onclick="togglepopup()">close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div_1">
+                    <h3>SOCIAL WORK DEPARTMENT</h3>
+                    <img src="socialwork.png">
+                    <button class="bott" type="button" onclick="togglepopup()">MORE DETAILS</button>
+                    <div class="popup" id="model_container">
+                        <div class="model-container">
+                            <div class="model">
+                                <h6>A and E DEPARMENT</h6>
+                                <P>
+                                    Lorem ipsum dolor sit ameconsectetur t adipisicing elit. Repellat voluptate
+                                    consectetur deleniti quisquam  est libero facilis sapiente
+                                    rem saepe esse quo ut enim! Eveniet totam eius laborum, in accusamus
+                                    non dolorem perspiciatis laboriosam, natus officia
+                                    nostrum ex? Dolorem, autem nemo. Quidem fac
+                                </P>
+                                <p>select One</p>
+
+                                <button  class="bott" id="close-bott" type="button" onclick="togglepopup()">close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div_1">
+                    <h3>CHAPLAINCY DEPARTMENT</h3>
+                    <img src="chapl.png">
+                    <button class="bott" type="button" onclick="togglepopup()">MORE DETAILS</button>
+                    <div class="popup" id="model_container">
+                        <div class="model-container">
+                            <div class="model">
+                                <h6>A and E DEPARMENT</h6>
+                                <P>
+                                    Lorem ipsum dolor sit ameconsectetur t adipisicing elit. Repellat voluptate
+                                    consectetur deleniti quisquam  est libero facilis sapiente
+                                    rem saepe esse quo ut enim! Eveniet totam eius laborum, in accusamus
+                                    non dolorem perspiciatis laboriosam, natus officia
+                                    nostrum ex? Dolorem, autem nemo. Quidem fac
+                                </P>
+                                <p>select One</p>
+
+                                <button  class="bott" id="close-bott" type="button" onclick="togglepopup()">close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div_2">
+                    <h3 id="low_font">OPHTHAL. DEPARMENT</h3>
+                    <img src="opthal.png">
+                    <button class="bott" type="button" onclick="togglepopup()">MORE DETAILS</button>
+                    <div class="popup" id="model_container">
+                        <div class="model-container">
+                            <div class="model">
+                                <h6>A and E DEPARMENT</h6>
+                                <P>
+                                    Lorem ipsum dolor sit ameconsectetur t adipisicing elit. Repellat voluptate
+                                    consectetur deleniti quisquam  est libero facilis sapiente
+                                    rem saepe esse quo ut enim! Eveniet totam eius laborum, in accusamus
+                                    non dolorem perspiciatis laboriosam, natus officia
+                                    nostrum ex? Dolorem, autem nemo. Quidem fac
+                                </P>
+                                <p>select One</p>
+
+                                <button  class="bott" id="close-bott" type="button" onclick="togglepopup()">close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div_2">
+                    <h3>ORTHOPAEDIC DEPARMENT</h3>
+                    <img src="orthopic.png">
+                    <button class="bott" type="button" onclick="togglepopup()">MORE DETAILS</button>
+                    <div class="popup" id="model_container">
+                        <div class="model-container">
+                            <div class="model">
+                                <h6>A and E DEPARMENT</h6>
+                                <P>
+                                    Lorem ipsum dolor sit ameconsectetur t adipisicing elit. Repellat voluptate
+                                    consectetur deleniti quisquam  est libero facilis sapiente
+                                    rem saepe esse quo ut enim! Eveniet totam eius laborum, in accusamus
+                                    non dolorem perspiciatis laboriosam, natus officia
+                                    nostrum ex? Dolorem, autem nemo. Quidem fac
+                                </P>
+                                <p>select One</p>
+
+                                <button  class="bott" id="close-bott" type="button" onclick="togglepopup()">close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div_2">
+                    <h3 id="low_font">GASTROENTRO. DEPARMENT</h3>
+                    <img src="gastro.png">
+                    <button class="bott" type="button" onclick="togglepopup()">MORE DETAILS</button>
+                    <div class="popup" id="model_container">
+                        <div class="model-container">
+                            <div class="model">
+                                <h6>A and E DEPARMENT</h6>
+                                <P>
+                                    Lorem ipsum dolor sit ameconsectetur t adipisicing elit. Repellat voluptate
+                                    consectetur deleniti quisquam  est libero facilis sapiente
+                                    rem saepe esse quo ut enim! Eveniet totam eius laborum, in accusamus
+                                    non dolorem perspiciatis laboriosam, natus officia
+                                    nostrum ex? Dolorem, autem nemo. Quidem fac
+                                </P>
+                                <p>select One</p>
+
+                                <button  class="bott" id="close-bott" type="button" onclick="togglepopup()">close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div_2">
+                    <h3>UROLOGY DEPARMENT</h3>
+                    <img src="Urology.jpg">
+                    <button class="bott" type="button" onclick="togglepopup()">MORE DETAILS</button>
+                    <div class="popup" id="model_container">
+                        <div class="model-container">
+                            <div class="model">
+                                <h6>A and E DEPARMENT</h6>
+                                <P>
+                                    Lorem ipsum dolor sit ameconsectetur t adipisicing elit. Repellat voluptate
+                                    consectetur deleniti quisquam  est libero facilis sapiente
+                                    rem saepe esse quo ut enim! Eveniet totam eius laborum, in accusamus
+                                    non dolorem perspiciatis laboriosam, natus officia
+                                    nostrum ex? Dolorem, autem nemo. Quidem fac
+                                </P>
+                                <p>select One</p>
+
+                                <button  class="bott" id="close-bott" type="button" onclick="togglepopup()">close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div_2">
+                    <h3>FINANCE DEPARMENT</h3>
+                    <img src="financepic.png">
+                    <button class="bott" type="button" onclick="togglepopup()">MORE DETAILS</button>
+                    <div class="popup" id="model_container">
+                        <div class="model-container">
+                            <div class="model">
+                                <h6>A and E DEPARMENT</h6>
+                                <P>
+                                    Lorem ipsum dolor sit ameconsectetur t adipisicing elit. Repellat voluptate
+                                    consectetur deleniti quisquam  est libero facilis sapiente
+                                    rem saepe esse quo ut enim! Eveniet totam eius laborum, in accusamus
+                                    non dolorem perspiciatis laboriosam, natus officia
+                                    nostrum ex? Dolorem, autem nemo. Quidem fac
+                                </P>
+                                <p>select One</p>
+
+                                <button  class="bott" id="close-bott" type="button" onclick="togglepopup()">close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div_2">
+                    <h3 id="low_font">RADIO. & -THERAPY</h3>
+                    <img src="radiopic.jpg">
+                    <button class="bott" type="button" onclick="togglepopup3()">MORE DETAILS</button>
+                    <div class="popup3" id="RADIOLOGY_container">
+                        <div class="RADIOLOGY-container">
+                            <div class="model3">
+                                <h6>A and E DEPARMENT</h6>
+                                <P>
+                                    Lorem ipsum dolor sit ameconsectetur t adipisicing elit. Repellat voluptate
+                                    consectetur deleniti quisquam  est libero facilis sapiente
+                                    rem saepe esse quo ut enim! Eveniet totam eius laborum, in accusamus
+                                    non dolorem perspiciatis laboriosam, natus officia
+                                    nostrum ex? Dolorem, autem nemo. Quidem fac
+                                </P>
+                                <p>select One</p>
+
+                                <button  class="bott" id="close-bott" type="button" onclick="togglepopup3()">close</button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </div>
+            <div class="content-3" id="">
+                <h2>SELECT YOUR DEPARTMENT</h2>
+                <p>Please Choose One</p>
+                <div class="input-1">
+                    <label><input type="checkbox" name="wards">Accident AND emergency(A/E) Department</label>
+                    <label><input type="checkbox" name="wards">Merternity Department</label>
+                    <label><input type="checkbox" name="wards">Pharmacy Department</label>
+                    <label><input type="checkbox" name="wards">Intensive Care Unit (ICU)</label>
+                    <label><input type="checkbox" name="wards">Paediatric Department</label>
+                    <label><input type="checkbox" name="wards">Anesthetic Department</label>
+                </div>
+                <div  class="input-2"> 
+                
+                    <label><input type="checkbox" name="wards">Surgical Department</label>
+                    <label><input type="checkbox" name="wards">Health And Safety Department</label>
+                    <label><input type="checkbox" name="wards">Otolaryncology(ENT) Department</label>
+                    <label><input type="checkbox" name="wards">Neurology Department</label>
+                    <label><input type="checkbox" name="wards">Social Work Department</label>
+                    <label><input type="checkbox" name="wards">Ophthalmology Department</label> 
+                
+                </div>
+                <div  class="input-3">
+                    <label><input type="checkbox" name="wards">Orthopic Department</label>
+                    <label><input type="checkbox" name="wards">Gastroentrology Department</label>
+                    <label><input type="checkbox" name="wards">Urology Department</label>
+                    <label><input type="checkbox" name="wards">Dentistrydermatology Department</label>
+                    <label><input type="checkbox" name="wards">Finance Department</label>       
+                    <label><input type="checkbox" name="wards">Radiology And Radiology Department</label>
+                </div>
+            
+            </div>
+            <div class="cmt">
+            <h3>Comment</h3>
+            <input type="textarea" placeholder="Type" for="text">
+            </div>
+            <div class="send">   
+                <button id="#sensd"><a href="#" >SEND</a></button>
+            </div>
+        
+            <div class="footer">
+                <div class="ftn">
+                    <dl>
+                        <h3>ANALI HOSPITAL</h3>
+                        <li><a href="#about">About us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">News And Event</a></li>
+                    </dl>
+                </div >
+                <div class="ftn">
+                    <h3> SEARCH FOR</h3>
+                    <li><a href="fro" id="fro">Doctor?</a></li>
+                    <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\P&D.html">Nurse?</a></li>
+                    <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\P&D.html">pharmcist?</a></li>
+                    <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\P&D.html">Worker?</a></li>
+                </div>
+                <div class="ftn">
+                    <h3>PATIENT</h3>
+                    <li><a  href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\department.html">Patient & Visitors</li>
+                    <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\department.html">patient Resources</a></li>
+                    <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\ANALITCH.html">Call-to-Action</a></li>
+                    <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\department.html">Out-of-town patience</a></li>
+                </div>
+                <div class="ftn-data">
+                <img class="ftn-hoslogo" src="hoslogo.png">
+                <h3 id="h-logo">Anali hospital</h3>
+                <p id="p-logo"> 2111 P.O Box 687 Kano Nigiria</p>
+                </div>
+                <div><i class="ion-icon fa-facebook"></i></div>
+                <h4><p>&copy;</p>. All rights Reserved 2022 ANA604 by Analitech</p></h4>
+            </div>
+    </div>
+        <script src="hospital.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    </body>
+</html>

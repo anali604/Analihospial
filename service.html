@@ -1,0 +1,564 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments</title>
+<html>
+    <style>
+       *{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            width: 100%;
+            background: white;
+            background-position: center;
+            background-size: cover;
+            height: 109vh;
+        }
+        .header{
+            width: 1290px;
+            height: 100px;
+            padding-top: 10px;
+            margin-bottom: 100px;
+            margin: auto;
+            background-color: white;
+            position: fixed;
+            z-index: 1;
+            box-shadow: 2px 7px 9px rgba(0, 0 ,0, 0.2);   
+        }   
+        .logo{
+            width: 200px;
+            float: left;
+            height: 70px;
+
+        }
+        .hoslogo{
+            height: 90px;
+            width: 150px;
+            padding-left:  20px;
+            overflow: hidden;
+        }
+        .hed{
+            color: black;
+            font-size: 14px;
+            line-break: none;
+            font-family: Arial, Helvetica;
+            padding-left: 50px;
+            position: relative;        
+            margin-top: -15px;
+        }
+        .navbar{
+            width: 400px;
+            float: left;
+            height: 70px;
+        }
+        ul{  
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            float: left;
+            margin-left: 75px;
+        }
+        ul li{
+            list-style: none;
+            font-size: 15px;
+            margin-top: 27px;
+            margin-left: 30px;
+        }
+        ul li a{
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: black;
+            font-size: 15px;
+            border-bottom: none;
+            transition:all .4s ease-in;
+        }
+        ul li a:hover{
+            color: blue;
+            border-bottom: 2px solid blue;
+            padding-bottom: 2px;
+            outline: none;
+        }
+        .active{
+           color: rgb(77, 77, 240);
+           border-bottom:2px solid blue;
+
+        }
+        a.active{
+            background: blue;
+            border-radius: 10px;
+            color: white;
+            padding: 7px;
+        }
+        a.active:hover{
+            color: #fff;
+            background: rgb(77, 77, 240);
+            padding-bottom: 2px;
+            transition: all .5;
+        }
+        .content .home a{
+            border-bottom:3px solid blue;
+        }
+        .navbar button{
+            left: 430px;
+            top: 30px;
+            position: absolute;
+            display: none;
+            width: 30px;
+            height: 30px;
+            color: #fff;
+            z-index: 1;
+        }
+        .search{
+            width: 300px;
+            float: left;
+            margin-left: 955px;
+        }
+        .srch{
+            box-shadow: 1px 3px 7px rgba(90, 90, 105, 0.5); 
+            font-size: 17px;
+            font-family:Arial ;
+            width: 200px;
+            height: 40px;
+            background-color: transparent;
+            border: 2px solid blue;
+            margin-top: -55px;
+            border-right: none;
+            font: 16px;
+            float: left;
+            padding: 10px;
+            border-top-left-radius: 5px;
+        }
+        .btn{
+            box-shadow: 1px 3px 7px rgba(47, 47, 51, 0.5); 
+            float: right;
+            font-size: 11.5px;
+            border-bottom-right-radius: 5px;
+            color: white;
+            width: 45px;
+            height: 40px;
+            background: blue;
+            border: 2px solid blue;
+            font-weight: 1000px;
+            margin-top: -55px;
+            font-family: 'Courier New';
+            margin-right: 95px;
+            cursor: pointer;
+        }
+        .btn:focus{
+            outline: none;
+        }
+        .srch:focus{
+            outline: none;
+            opacity: 3;
+        }
+        .btn:hover{
+            background: rgb(77, 77, 240);
+            border-color: 2px inset rgb(77, 77, 240);;
+        }
+        .menubar_1{
+            display: none;
+            position: absolute;
+            left: 430px;
+            top: 30px;
+            align-items: flex-end;
+            background: #4169E1;
+            width: 35px;
+            height: 35px;    
+        }
+        .menubar_1 button{
+            width: 20px;
+            height: 20px;
+            color: white;
+            align-items: center;
+            margin-left: 8px;
+            margin-top: 8px;
+            z-index: -1;
+        }
+        .content_2{
+            max-width: 100%;
+            padding-top: 60px;
+        }
+        .content_2 h3{
+            font-family: 'Times New Roman', Times, serif;
+            outline:none;
+            font-weight: bold;
+            font-size: 25px;
+            padding-top: 30px;
+            color: #000;
+            margin-top: 50px;
+            padding: 30px;
+            text-align: center;
+        }
+        .content_2 p{
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 500;
+            text-justify: auto;
+            font-size: 17px;
+            margin-left: 30px;
+        } 
+        .content_2 span{
+            color: blue;
+        }
+        .service{
+            margin: 10px;
+            box-shadow: 1px 3px 7px rgba(90, 90, 105, 0.5); 
+            position: relative;
+            padding: 20px;
+        }
+        .service h4{
+            font-family: Arial, serif;
+            font-size: 20px;
+            text-align: center;
+            width: 200px;
+            margin-left: 500px;
+            margin-top: -12px;
+            padding: 6px;
+            border-top: 2px solid blue;
+            border-right: 2px solid blue;
+            border-bottom: 2px solid blue;
+        }
+       .service span{
+            height: 0px;
+            width: 0px;
+            position: absolute;
+            left: 500px;
+            top: -99;
+            margin-top: 107px;
+            border-top: 19px solid blue;
+            border-bottom: 20px solid blue;
+            border-left: 20px solid transparent;
+            border-right: 15px solid blue;
+        }
+        .service ol{
+            position: relative;
+            margin: 10px;
+            display: block;
+        }
+        .service ol li{
+            margin: 20px;
+            list-style: none;
+        }
+        .service ol li a{
+            text-decoration: none;
+            color: #000;
+            font-family: serif;
+            font-weight: 559.9;
+        }
+
+        .pic{
+            position: relative;
+            margin: 10px auto;
+            margin-top: 30px;
+            max-width: 100%;
+            margin-left: 50px;
+            /* box-shadow: 2px 2px 3px rgba(8, 27, 201, 0.5); */
+            padding-left: 30px;
+            padding-bottom: 10px;
+            margin-right: 20px;
+            border: none;
+        }
+        .pic h2{
+            font-family: cursive;
+            width: 210px;
+            height: 20px;
+            text-align: center;
+            margin-left: -5px;
+            color: #000;
+            font-size: 20px;
+        }
+        span::after{
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 90%;
+            background: blue;
+            top: 0px;
+            left: 0%;
+            margin-left: -3px;
+            z-index: -1;
+        }
+        .pic img{
+            width: 300px;
+            height: 170px;
+            overflow:hidden;
+        }
+        .pic #box{
+            height: 210px;
+            max-width: 100%;
+            margin-top: 30px;
+            box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+            border-bottom: 2px solid blue;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;;
+            pointer-events: all;  
+        }
+        .pic button{
+            padding: 10px;
+            background: blue;
+            margin-top: 40px;
+            color: white;
+            border-radius: 20px;
+            border: 1px solid #4169E1;
+            transition: .5s;
+        }
+        .pic button a{
+            color: #fff;
+            text-decoration: none;
+            font-family: cursive;
+            font-weight: 600;
+        }
+        .pic button:hover{
+            background: #4169E1;
+            margin-left: 10px;
+        }
+        .pic h3{
+            padding-top: 1px;
+            padding-left: 10px;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+        }
+        .pic .mypar{
+            position: relative;
+            float: right;
+            width: 700px;
+            height: 200px;
+            line-height: 1.5rem;
+            text-align: center;
+            align-items: center;
+            margin-right: 50px;
+            margin-top: -150px;
+        }
+        .footer{
+            width: 100%;
+            margin-top: 1%;
+            padding-top: 00px;
+            background-color: #00008b;
+            position: absolute;
+        }
+        .footer h4{
+            color: white;
+            text-align: center;
+            font: 30px;
+            font-size: 17px;
+        }
+        .ftn{
+            float: left;
+            color: white;
+            margin-left: 200px;
+            padding-top: 20px;
+            
+        }
+        .footer h3{
+            font-family: arial;
+        }
+        .ftn a{
+            outline: none;
+            list-style: none;
+            color: white;
+            text-decoration: none;
+            line-height: 2rem;
+            font-size: 17px;
+            letter-spacing: 0.0625rem;
+        }
+        .ftn a:focus{
+            outline: none;
+        }
+        .ftn-data{
+            max-width: 100%;
+            color: white;
+            margin-left: 20px;
+            margin-bottom: 110px;
+            
+        }
+        .ftn-hoslogo{
+            height: 100px;
+            width: 100px;
+            border-radius: 100%;
+            padding: 100px;
+            float: none;
+            position: relative;
+            z-index: 3;
+        }
+      
+        #h-logo{
+            margin-top: -80px;
+            margin-left: 60px;
+            position: relative;
+            font-weight: 100;
+        }
+        #p-logo{
+            margin-left: 58px;
+        }
+        @media screen and (max-width:1000px) {
+            #MenubarShow button{
+                display: block;
+            }
+            ul{  
+            align-items: center;
+            display: block;
+            justify-content: center;
+           }
+            ul li{
+            list-style: none;
+            font-size: 15px;
+            margin-top: 50px;
+            margin-left: -25px;
+            }
+            ul li a:hover{
+            color: white;
+            border-bottom: 2px solid white;
+           }
+            .menubar_1{
+            display: block;
+           
+            }
+            .navbar{
+            display: none;
+            background: #4169E1;
+            height: 600px; 
+            }
+            .service h4{
+                margin-left: 90px;
+            }
+            .service span{
+                left: 100px;
+            }
+            .mypic{
+            max-width: 100%;
+            padding-left: 50px;
+            display: block;   
+           }
+            .pic .mypar{
+            
+            display: block;
+            }
+            .pic #box{
+            display: block;
+            height: 400px;
+            }  
+            .pic img{
+            border: 1px solid blue;
+            border-radius: 10px;
+            margin-left: 9px;  
+            margin-top: 5px;
+            width: 365px;
+            height: 190px;
+            overflow:hidden;
+            }
+            .pic .mypar{
+            position: absolute;
+            max-width: 350px;
+            height: 200px;
+            line-height: 1.0rem;
+            margin-top: 4px;
+            }
+        }
+    </style>
+      
+    </script>
+    </head>
+    <body>
+        <script src="hospital.js"></script>
+        <div class="main">
+            <div class="header">
+                <div class="logo">
+                <img class="hoslogo" src="hoslogo.png">
+                    <h1 class="hed"><span>ANALI</span> HOSPITAL</h1>
+                </div>
+                <div class="navbar" id="MenubarShow">
+                    <button type="menu" onclick="HideMenubar()"><ion-icon name="chatbubble" ></ion-icon></button>
+                    <ul>
+                        <li><a  href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\ANALITCH.html">HOME</a></li>
+                        <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\department.html">DEPARTMENTS</a></li>
+                        <li><a class="active" href="#">SERVICES</a>
+                            <!-- <div class="menubar">
+                                <ul>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#">ACQUISITION SERVICES</a></li>
+                                    <li><a href="#">SUPPORTIVE SERVICES</a></li>
+                                    <li><a href="#">SUPPORTIVE SERVICES</a></li>
+                                </ul>
+                            </div> -->
+                        </li>
+                        <li><a id="line" href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\P&D.html">PHYSICIANS/STAFFS</a></li>
+                        <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\about.html">ABOUT</a></li>
+                    </ul>
+                </div>
+                <div class="menubar_1">
+                    <button type="menu" onclick="ShowMenubar()"><ion-icon name="chatbubble" ></ion-icon></button>
+                </div>
+                <div class="search">
+                    <input class="srch" type="search" name="search" placeholder="Type">
+                </div>
+                <div>
+                    <a href="#search"><button class="btn">SEARCH</button></a>
+                </div>
+            </div>
+
+            <div class="content_2">
+                <h3>WELCOME TO<span> ANALI</span> HOSPITAL SERVICES</h3>
+                <p><b> ANALI UNICARE HOSPITAL</b>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis deserunt est eius vel nihil, quasi doloremque excepturi reiciendis consequatur commodi quibusdam aliquid perspiciatis fuga optio quisquam adipisci accusamus qui assumenda voluptatum corporis eligendi rem sit facere praesentium. Sed, laudantium quaerat?</p>
+                <p>
+                At the Admitting Department, the patient will be required to provide personal information and sign consent forms before being taken to the hospital unit or ward. If the individual iscritically ill, then, this information is usually obtained from a family member.
+                </p>
+                <p>Our hospital have many Departments,Below are the list of our Departments</p>    
+            </div>
+            <div class="service">
+                <span></span><h4>OUR SERVICES</h4>
+                <ol type="I">
+                    <li><a href="google.com">ACQUISITION SERVICES</a></li>
+                    <li><a href="google.com">SUPPORTIVE SERVICES</a></li>
+                    <li><a href="google.com">LINE SERVICES</a></li>
+                </ol>
+            </div>
+            <div class="pic" id="service">
+                <h2 class="bg-info"><span></span>OTHERS</h2>
+                  <div class="container">
+                      <div id="box"><img src="CARE.jpg" id="link1" onmouseover="getAddress();"><h3>Coordinated Care</h3><p class="mypar">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas quia illum ducimus suscipit possimus id ipsa, debitis repellendus optio vel tempore dolorem iure quam, culpa excepturi fugit nihil commodi. Molestias nam voluptates repudiandae ipsa quod quisquam, doloremque iste excepturi. Voluptate reprehenderit illo magni neque asperiores commodi delectus quo porro.</p></div>
+                      <div id="box"><img src="doctors.png"><h3>Focused Leadership</h3><p class="mypar">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas quia illum ducimus suscipit possimus id ipsa, debitis repellendus optio vel tempore dolorem iure quam, culpa excepturi fugit nihil commodi. Molestias nam voluptates repudiandae ipsa quod quisquam, doloremque iste excepturi. Voluptate reprehenderit illo magni neque asperiores commodi delectus quo porro.</p></div>
+                      <div id="box"><img src="ICUPIC.png"><h3>Cutting Edge technology</h3><p class="mypar">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas quia illum ducimus suscipit possimus id ipsa, debitis repellendus optio vel tempore dolorem iure quam, culpa excepturi fugit nihil commodi. Molestias nam voluptates repudiandae ipsa quod quisquam, doloremque iste excepturi. Voluptate reprehenderit illo magni neque asperiores commodi delectus quo porro.</p></div>
+                      <div id="box"><img src="PATIENT.png"><h3>Patients Centre</h3><p class="mypar">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas quia illum ducimus suscipit possimus id ipsa, debitis repellendus optio vel tempore dolorem iure quam, culpa excepturi fugit nihil commodi. Molestias nam voluptates repudiandae ipsa quod quisquam, doloremque iste excepturi. Voluptate reprehenderit illo magni neque asperiores commodi delectus quo porro.</p></div>             
+                  </div>
+            </div>
+            
+            <div class="footer">
+                <div class="ftn">
+                    <dl>
+                        <h3>ANALI HOSPITAL</h3>
+                        <li><a href="#about">About us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">News And Event</a></li>
+                    </dl>
+                </div >
+                <div class="ftn">
+                    <h3> SEARCH FOR</h3>
+                    <li><a href="fro" id="fro">Doctor?</a></li>
+                    <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\P&D.html">Nurse?</a></li>
+                    <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\P&D.html">pharmcist?</a></li>
+                    <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\P&D.html">Worker?</a></li>
+                </div>
+                <div class="ftn">
+                    <h3>PATIENT</h3>
+                    <li><a  href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\department.html">Patient & Visitors</li>
+                    <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\department.html">patient Resources</a></li>
+                    <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\ANALITCH.html">Call-to-Action</a></li>
+                    <li><a href="C:\Users\Family PC\Desktop\ANALI HOSPITAL\department.html">Out-of-town patience</a></li>
+                </div>
+                <div class="ftn-data">
+                <img class="ftn-hoslogo" src="hoslogo.png">
+                <h3 id="h-logo">Anali hospital</h3>
+                <p id="p-logo"> 2111 P.O Box 687 Kano Nigiria</p>
+                </div>
+                <div><i class="ion-icon fa-facebook"></i></div>
+                <h4><p>&copy;</p>. All rights Reserved 2022 ANA604 by Analitech</p></h4>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    </body>
+</html>
